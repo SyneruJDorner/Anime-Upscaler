@@ -1,8 +1,8 @@
 # Anime-Upscaler
 An anime video upscaler that uses ffmpeg and waifu2x-caffe.
 
-How To Use:
--Place your desired video into "Input Video"
+How To Use:\n
+Place your desired video into "Input Video"\n
 -Run either:
 	-Upscale_Anime_CPU.bat*
 	-Upscale_Anime_GPU.bat*

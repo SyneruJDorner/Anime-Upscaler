@@ -2,25 +2,25 @@
 An anime video upscaler that uses ffmpeg and waifu2x-caffe.
 
 How To Use:
-	-Place your desired video into "Input Video"
-	-Run either:
-		-Upscale_Anime_CPU.bat*
-		-Upscale_Anime_GPU.bat*
-		-Upscale_Anime_CUDNN.bat*
-	-Follow the instructions on command prompt.
+-Place your desired video into "Input Video"
+-Run either:
+	-Upscale_Anime_CPU.bat*
+	-Upscale_Anime_GPU.bat*
+	-Upscale_Anime_CUDNN.bat*
+-Follow the instructions on command prompt.
 
 	*READ THE IMPORTATNT MESSAGE BELOW!
 
 Whats still needs to be done:
-	-Auto detection of CUDA, GPU and CPU in one batch file.
-	-Auto detection the video frame rate, that way you wont need to input it when prompted.
-	-Recompile video with all audio, subtitles and markers when upscaled video is rendered.
+-Auto detection of CUDA, GPU and CPU in one batch file.
+-Auto detection the video frame rate, that way you wont need to input it when prompted.
+-Recompile video with all audio, subtitles and markers when upscaled video is rendered.
 
 IMPORTANT:
 There are 3 variation of the project:
-	-CPU based Upscale (Slow)
-	-GPU based Upscale (Medium)
-	-CUDNN based Upscale (FAST)
+-CPU based Upscale (Slow)
+-GPU based Upscale (Medium)
+-CUDNN based Upscale (FAST)
 
 	In most cases from what I am aware of CPU and GPU should work on most system.
 	In the case of CUDNN you need a nvidia card with CUDA 3.0 or higher.
@@ -32,5 +32,5 @@ There are 3 variation of the project:
 	These are also dependant on the number of frames of the anime (more fames means more space).
 	
 TESTS (hh:mm:ss):
-	-750  ti (640 CUDA cores), took about 16-18 hours to upscale a 50:00:00 minute anime from 640×480 to 1280×960.
-	-1660 ti (1536 CUDA cores), took about 1 hour to upscale a 00:01:40 minute anime from 480x270 to 960x540.
+-750  ti (640 CUDA cores), took about 16-18 hours to upscale a 50:00:00 minute anime from 640×480 to 1280×960.
+-1660 ti (1536 CUDA cores), took about 1 hour to upscale a 00:01:40 minute anime from 480x270 to 960x540.

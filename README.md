@@ -1,18 +1,18 @@
 # Anime-Upscaler
 An anime video upscaler that uses ffmpeg and waifu2x-caffe.
 
-How to use:
+Markup :  # to use: #
 Place your desired video into the folder "Input Video". Then run one of the following Upscale_anime_CPU.bat*, Upscale_anime_GPU.bat* or Upscale_anime_CUDNN.bat*. You can then follow the instruction messages prompted.
 
 	*READ THE IMPORTATNT MESSAGE BELOW!
 
-Whats still needs to be done:
+Markup :  # still needs to be done: #
 
 * Auto detection of CUDA, GPU and CPU in one batch file.
 * Auto detection the video frame rate, that way you wont need to input it when prompted.
 * Recompile video with all audio, subtitles and markers when upscaled video is rendered.
 
-IMPORTANT:
+Markup :  # IMPORTANT: #
 
 There are 3 variation of the project:
 * CPU based Upscale (Slow)
@@ -28,7 +28,7 @@ There are 3 variation of the project:
 	The 00:40:00 anime took around 300 gigs. 00:01:40 took about 5 gigs.
 	These are also dependant on the number of frames of the anime (more fames means more space).
 
-TESTS (hh:mm:ss):
+Markup :  # TEST (hh:mm:ss): #
 
 * 750  ti (640 CUDA cores), took about 16-18 hours to upscale a 50:00:00 minute anime from 640×480 to 1280×960.
 * 1660 ti (1536 CUDA cores), took about 1 hour to upscale a 00:01:40 minute anime from 480x270 to 960x540.

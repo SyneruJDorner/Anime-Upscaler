@@ -30,5 +30,5 @@ There are 3 variation of the project:
 
 TESTS (hh:mm:ss):
 
-*750  ti (640 CUDA cores), took about 16-18 hours to upscale a 50:00:00 minute anime from 640×480 to 1280×960.
-*1660 ti (1536 CUDA cores), took about 1 hour to upscale a 00:01:40 minute anime from 480x270 to 960x540.
+* 750  ti (640 CUDA cores), took about 16-18 hours to upscale a 50:00:00 minute anime from 640×480 to 1280×960.
+* 1660 ti (1536 CUDA cores), took about 1 hour to upscale a 00:01:40 minute anime from 480x270 to 960x540.

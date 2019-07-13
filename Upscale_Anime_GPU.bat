@@ -16,39 +16,49 @@ echo Extracting Frames from Video.
 IF EXIST "./Input Video/*.mkv" (
 	for %%f in ("./Input Video/*.mkv") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.mp4" (
+) ELSE IF EXIST "./Input Video/*.mp4" (
 	for %%f in ("./Input Video/*.mp4") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.avi" (
+) ELSE IF EXIST "./Input Video/*.avi" (
 	for %%f in ("./Input Video/*.avi") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.flv" (
+) ELSE IF EXIST "./Input Video/*.flv" (
 	for %%f in ("./Input Video/*.flv") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.ogm" (
+) ELSE IF EXIST "./Input Video/*.ogm" (
 	for %%f in ("./Input Video/*.ogm") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.3gp" (
+) ELSE IF EXIST "./Input Video/*.3gp" (
 	for %%f in ("./Input Video/*.3gp") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
-)
-ELSE IF EXIST "./Input Video/*.wmv"(
+) ELSE IF EXIST "./Input Video/*.wmv" (
 	for %%f in ("./Input Video/*.wmv") do (
 		ffmpeg -i "%root_folder%Input Video\%%f" "Frames\Extracted\frame_%%08d.bmp"
+		"./ffprobe" -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "%root_folder%Input Video\%%f" > "./cached_framerate.txt"
 	)
 )
 
+SET /P Var=<cached_framerate.txt
+DEL "./cached_framerate.txt"
+
+for /f "tokens=1* delims=/" %%a in ("%Var%") do (
+  set part1=%%a
+  set part2=%%b
+) 
+set /a framerate = %part1% / %part2%
+echo Extracted Frameframerate: %framerate%
 echo Extracted Frames.
 echo Improving All Frame Quality.
 @echo off
@@ -75,11 +85,8 @@ for /r %%i in (*) do (
 	Set /A "Fraction = !cnt! %% 1000"
 	echo !percent!.!Fraction!%% Complete
 )
+
 setlocal DisableDelayedExpansion
-
 echo Converting Images to Video
-
-set /p framerate=Enter framerate:
 "ffmpeg.exe" -threads 4 -r %framerate% -f image2 -s 1920x1080 -i "Frames/Created/frame_%%08d.bmp" -aspect 16:9 -b 2M -vcodec libx264 -crf 25  -pix_fmt yuv420p "Output Video\video.mkv"
-
 PAUSE

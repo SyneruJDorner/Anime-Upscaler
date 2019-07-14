@@ -23,7 +23,8 @@ There are 3 variation of the project:
 	In most cases from what I am aware of CPU and GPU should work on most system.
 	In the case of CUDNN you need a nvidia card with CUDA 3.0 or higher.
 	If you do not have CUDA installed and you have a nvidia card download at:
-	https://developer.nvidia.com/cuda-downloads
+	https://developer.nvidia.com/rdp/cudnn-download
+	However you will need to signup if you haven't.
 
 	You will also need a ton of free space as the upscaled images are huge.
 	The 00:40:00 anime took around 300 gigs. 00:01:40 took about 5 gigs.

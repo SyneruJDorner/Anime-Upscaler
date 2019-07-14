@@ -20,11 +20,16 @@ There are 3 variation of the project:
 * GPU based Upscale (Medium)
 * CUDNN based Upscale (FAST)
 
-	In most cases from what I am aware of CPU and GPU should work on most system.
-	In the case of CUDNN you need a nvidia card with CUDA 3.0 or higher.
-	If you do not have CUDA installed and you have a nvidia card download at:
-	https://developer.nvidia.com/rdp/cudnn-download
-	However you will need to signup if you haven't.
+In most cases from what I am aware of CPU and GPU should work on most system.
+In the case of CUDNN you need a nvidia card with CUDA 3.0 or higher.
+If you do not have CUDA installed and you have a nvidia card download at:
+https://developer.nvidia.com/cuda-90-download-archive
+https://developer.nvidia.com/rdp/cudnn-download (You will need to signup to download this)
+
+Once the files are downloaded locally, unzip them. Installing cuDNN is pretty straight forward. You just have to copy three files from the unzipped directory to CUDA 9.0 install location. For reference, NVIDIA team has put them in their own directory. So all you have to do is to copy file from :
+* {unzipped dir}/bin/ --> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin
+* {unzipped dir}/include/ --> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include
+* {unzipped dir}/lib/ --> C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib
 
 	You will also need a ton of free space as the upscaled images are huge.
 	The 00:40:00 anime took around 300 gigs. 00:01:40 took about 5 gigs.

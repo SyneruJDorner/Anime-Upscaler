@@ -7,11 +7,12 @@ Place your desired video into the folder "Input Video". Then run one of the foll
 
 	*READ THE IMPORTATNT MESSAGE BELOW!
 
-## still needs to be done: ##
+## Still needs to be done: ##
 
 * Auto detection of CUDA, GPU and CPU in one batch file.
 * ~~Auto detection the video frame rate, that way you wont need to input it when prompted.~~
 * Recompile video with all audio, subtitles and markers when upscaled video is rendered.
+* Automated cleanup for both cached images extracted from video and upsclaed images.
 
 ## IMPORTANT: ##
 
